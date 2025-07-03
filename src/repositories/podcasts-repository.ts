@@ -5,9 +5,14 @@ import { PodcastModel } from '../model/Podecast-Model'
 
 const pathData = path.join(__dirname, '../repositories/podcasts.json');
 
-export const repositoryPodcast = async (): Promise<PodcastModel[]> => {
+export const repositoryPodcast = async (podcastName?: string): Promise<PodcastModel[]> => {
 
     const rowData = fs.readFileSync(pathData, 'utf-8');
-    const jsonFile = JSON.parse(rowData);
+    let jsonFile = JSON.parse(rowData);
+
+    if (podcastName) {
+        jsonFile = jsonFile.filter((podcast: PodcastModel) => podcast.podcastName === podcastName);
+    }
+
     return jsonFile;
 };
