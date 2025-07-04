@@ -1,10 +1,15 @@
 import * as http from 'http'
-import { getListEpisodes } from './controllers/podscasts-controllers'
+import { getListEpisodes, getFilterEpisodes } from './controllers/podscasts-controllers'
 
 const server = http.createServer(async (req: http.IncomingMessage, res: http.ServerResponse) => {
 
-    if (req.method === 'GET') {
+    const [baseUrl, queryString] = req.url?.split('?') ?? ['', ''];
+
+    if (req.method === 'GET' && baseUrl === '/api/list') {
         await getListEpisodes(req, res)
+    }
+    else if (req.method === 'GET' && baseUrl === baseUrl) {
+        await getFilterEpisodes(req, res);
     }
 
 });
