@@ -1,5 +1,5 @@
 import * as http from 'http'
-import { getListEpisodes, getFilterEpisodes } from './controllers/podscasts-controllers'
+import { getListEpisodes, getFilterEpisodes } from './controllers/podcasts-controllers'
 import { Routes } from './routes/routes';
 import { HttpMethod } from './utils/http-methods';
 

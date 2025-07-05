@@ -5,5 +5,5 @@ const server = http.createServer(app);
 
 const port = process.env.PORT;
 server.listen(port, () => {
-    console.log(`O servido esta rodando na porta: ${port}`)  
+    console.log(`O servido esta rodando na port: ${port}`)  
 });

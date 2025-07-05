@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { PodcastModel } from '../model/Podecast-Model'
+import { PodcastModel } from '../model/Podcast-Model';
 
 const pathData = path.join(__dirname, '../repositories/podcasts.json');
 
